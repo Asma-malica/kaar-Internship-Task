@@ -1,0 +1,31 @@
+<div class="overall-container">
+    <p>{{ title }}</p>
+    <div>
+      <input type="text" [(ngModel)]="searchTerm" placeholder="Search by student name" />
+      <button class="clear-btn" (click)="clearSearch()" [disabled]="!searchTerm">Clear</button>
+    </div>
+  
+    <table class="styled-table" *ngIf="fetchFilteredStudents().length > 0; else noData">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Marks</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of fetchFilteredStudents()">
+          <td>{{ student.name }}</td>
+          <td>{{ student.department }}</td>
+          <td>{{ student.marks }}</td>
+          <td>{{ student.marks >= 40 ? 'Pass' : 'Fail' }}</td> <!-- Ternary operator here -->
+        </tr>
+      </tbody>
+    </table>
+  
+    <ng-template #noData>
+      <p>No Student Found</p>
+    </ng-template>
+  </div>
+  
