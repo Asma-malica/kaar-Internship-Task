@@ -20,9 +20,9 @@ export class StudentListsComponent implements OnInit {
     //event binding (clicking event)
     //get the data from api
     this.studentData = [
-      { name: 'A', department: 'CSE', marks: 78 },
-      { name: 'B', department: 'ECE', marks: 35 },
-      { name: 'C', department: 'IT', marks: 50 },
+      { name: 'Anitha', department: 'CSE', marks: 78 },
+      { name: 'kavitha', department: 'ECE', marks: 35 },
+      { name: 'Savitha', department: 'IT', marks: 50 },
     ];
   }
 
