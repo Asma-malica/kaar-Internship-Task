@@ -1,8 +1,14 @@
 <div class="overall-container">
+    <!-- interpolation -->
     <p>{{ title }}</p>
     <div>
+      <!-- 
+2 way binding 
+      If the data changes in the component, it automatically updates the view (HTML),and
+      if the user changes the data in the view (input field etc.), it automatically updates the component's data. -->
+      <!-- ngModel -> It is 2 way binding which is used for synchronization between the ts and html -->
       <input type="text" [(ngModel)]="searchTerm" placeholder="Search by student name" />
-      <button class="clear-btn" (click)="clearSearch()" [disabled]="!searchTerm">Clear</button>
+      <button class="clear-btn" (click)="clearSearch()" [disabled]="!searchTerm">Clear</button> <!-- event binding> -->
     </div>
   
     <table class="styled-table" *ngIf="fetchFilteredStudents().length > 0; else noData">
